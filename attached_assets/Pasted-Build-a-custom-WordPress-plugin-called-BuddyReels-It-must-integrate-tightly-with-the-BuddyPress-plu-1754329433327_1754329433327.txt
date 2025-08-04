@@ -1,0 +1,90 @@
+Build a custom WordPress plugin called BuddyReels.
+It must integrate tightly with the BuddyPress plugin.
+The plugin should follow all WordPress.org plugin development standards (no hardcoded paths, proper sanitization, nonce handling, proper enqueuing, etc.).
+This is the full MVP scope:
+
+📦 Plugin Name: BuddyReels
+🔑 Functional Requirements:
+Reel Upload via BuddyPress Activity Form
+
+Users can upload MP4 videos via the "What's new" activity post form.
+
+Caption input field.
+
+Uploads should be saved securely via wp_handle_upload().
+
+Automatic Thumbnail Generation
+
+Extract the first frame of the video as a thumbnail image.
+
+Use FFmpeg on the server (via exec()).
+
+Save thumbnail as media and associate with video.
+
+Profile Tab: Reels
+
+Add a new "Reels" tab to each BuddyPress profile.
+
+Display user’s uploaded reels in a responsive grid layout.
+
+Include captions and thumbnails.
+
+Reel Feed (TikTok-style)
+
+Shortcode: [buddyreels_feed]
+
+Displays all published reels in a vertical-scrolling feed (mobile-first).
+
+Videos autoplay and loop, muted by default.
+
+Include optional like + comment count.
+
+BuddyPress Activity Integration
+
+When a reel is uploaded, post it to the user’s activity stream.
+
+Include thumbnail, caption, and link to the reel’s page.
+
+Likes & Comments on Reels
+
+Users can like reels (store likes as post meta or activity meta).
+
+Use BuddyPress comments or standard WordPress comments for commenting.
+
+Drafts & Privacy
+
+Allow users to upload reels as drafts (private).
+
+Users can later publish reels from their profile tab.
+
+Drafts are not visible in feed or activity.
+
+Mobile Upload Support
+
+Touch-friendly upload UI on mobile devices.
+
+Show upload progress and preview before submit.
+
+Single Reel Page (Shareable)
+
+Each reel gets a unique permalink: /reels/{slug}/
+
+Displays full video, author, caption, likes, and comments.
+
+Include OpenGraph + Twitter Card meta tags for social sharing.
+
+⚙️ Technical Constraints
+BuddyPress is required for plugin to function.
+
+Use WordPress custom post types or custom tables for reels (up to you).
+
+All uploads must be validated and sanitized.
+
+All front-end JS/CSS should be properly enqueued.
+
+🔁 Optional Enhancements (not required immediately)
+Reel view counts
+
+Hashtags or tagging
+
+Reel reporting/moderation

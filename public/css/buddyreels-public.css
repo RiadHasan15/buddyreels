@@ -1,0 +1,566 @@
+/* BuddyReels Public Styles */
+
+/* Feed Styles */
+.buddyreels-feed {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px 10px;
+}
+
+.buddyreels-feed-item {
+    margin-bottom: 40px;
+    background: #fff;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1);
+    position: relative;
+}
+
+.buddyreels-video-container {
+    position: relative;
+    width: 100%;
+    height: 600px;
+    background: #000;
+    overflow: hidden;
+}
+
+.buddyreels-video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    cursor: pointer;
+    display: block;
+}
+
+.buddyreels-video-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0, 0, 0, 0.3);
+    pointer-events: none;
+}
+
+.buddyreels-play-button {
+    width: 80px;
+    height: 80px;
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #333;
+    transition: all 0.3s ease;
+}
+
+.buddyreels-play-button:hover {
+    background: rgba(255, 255, 255, 1);
+    transform: scale(1.1);
+}
+
+.buddyreels-feed-info {
+    padding: 16px;
+}
+
+.buddyreels-author {
+    display: flex;
+    align-items: center;
+    margin-bottom: 12px;
+}
+
+.buddyreels-author img {
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.buddyreels-author-name {
+    font-weight: 600;
+    font-size: 14px;
+    color: #333;
+}
+
+.buddyreels-caption {
+    margin-bottom: 16px;
+    color: #555;
+    line-height: 1.4;
+}
+
+.buddyreels-caption p {
+    margin: 0;
+}
+
+.buddyreels-actions {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.buddyreels-like-btn,
+.buddyreels-comment-btn,
+.buddyreels-share-btn {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    background: none;
+    border: none;
+    padding: 8px;
+    cursor: pointer;
+    color: #666;
+    font-size: 14px;
+    border-radius: 8px;
+    transition: all 0.2s ease;
+    text-decoration: none;
+}
+
+.buddyreels-like-btn:hover,
+.buddyreels-comment-btn:hover,
+.buddyreels-share-btn:hover {
+    background: #f5f5f5;
+    color: #333;
+}
+
+.buddyreels-like-btn.liked {
+    color: #e91e63;
+}
+
+.buddyreels-like-btn:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+/* Upload Form Styles */
+.buddyreels-upload-form {
+    background: #f9f9f9;
+    padding: 20px;
+    border-radius: 12px;
+    margin: 20px 0;
+}
+
+.buddyreels-upload-form h3 {
+    margin-top: 0;
+    margin-bottom: 16px;
+    font-size: 18px;
+    color: #333;
+}
+
+.buddyreels-form-group {
+    margin-bottom: 16px;
+}
+
+.buddyreels-form-group label {
+    display: block;
+    margin-bottom: 6px;
+    font-weight: 600;
+    color: #555;
+}
+
+.buddyreels-form-group input[type="file"],
+.buddyreels-form-group textarea,
+.buddyreels-form-group input[type="text"] {
+    width: 100%;
+    padding: 12px;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    font-size: 14px;
+    transition: border-color 0.3s ease;
+}
+
+.buddyreels-form-group input[type="file"]:focus,
+.buddyreels-form-group textarea:focus,
+.buddyreels-form-group input[type="text"]:focus {
+    outline: none;
+    border-color: #007cba;
+}
+
+.buddyreels-form-group textarea {
+    min-height: 80px;
+    resize: vertical;
+}
+
+.buddyreels-video-preview {
+    margin: 16px 0;
+    display: none;
+}
+
+.buddyreels-video-preview video {
+    width: 100%;
+    max-width: 300px;
+    height: auto;
+    border-radius: 8px;
+    background: #000;
+}
+
+.buddyreels-upload-progress {
+    width: 100%;
+    height: 6px;
+    background: #e0e0e0;
+    border-radius: 3px;
+    overflow: hidden;
+    margin: 16px 0;
+    display: none;
+}
+
+.buddyreels-upload-progress .progress-fill {
+    height: 100%;
+    background: #007cba;
+    width: 0%;
+    transition: width 0.3s ease;
+}
+
+.buddyreels-form-actions {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+}
+
+.buddyreels-btn {
+    padding: 12px 24px;
+    border: none;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    display: inline-block;
+    text-align: center;
+}
+
+.buddyreels-btn-primary {
+    background: #007cba;
+    color: white;
+}
+
+.buddyreels-btn-primary:hover {
+    background: #005a87;
+}
+
+.buddyreels-btn-secondary {
+    background: #f0f0f0;
+    color: #333;
+}
+
+.buddyreels-btn-secondary:hover {
+    background: #e0e0e0;
+}
+
+.buddyreels-btn:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+/* Profile Reels Tab */
+.buddyreels-profile-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 16px;
+    margin-top: 20px;
+}
+
+.buddyreels-reel-item {
+    position: relative;
+    aspect-ratio: 9/16;
+    border-radius: 12px;
+    overflow: hidden;
+    background: #000;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.buddyreels-reel-item:hover {
+    transform: scale(1.02);
+}
+
+.buddyreels-reel-item img,
+.buddyreels-reel-item video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.buddyreels-reel-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(transparent, rgba(0, 0, 0, 0.7));
+    color: white;
+    padding: 16px;
+}
+
+.buddyreels-reel-caption {
+    font-size: 12px;
+    margin-bottom: 8px;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.buddyreels-reel-actions {
+    display: flex;
+    gap: 8px;
+}
+
+.buddyreels-reel-actions button {
+    background: rgba(255, 255, 255, 0.2);
+    border: none;
+    color: white;
+    padding: 6px 12px;
+    border-radius: 6px;
+    font-size: 11px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.buddyreels-reel-actions button:hover {
+    background: rgba(255, 255, 255, 0.3);
+}
+
+.buddyreels-draft-badge {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    background: rgba(255, 193, 7, 0.9);
+    color: #333;
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 10px;
+    font-weight: 600;
+}
+
+/* Single Reel Page */
+.buddyreels-single-container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.buddyreels-single-video {
+    width: 100%;
+    max-height: 80vh;
+    background: #000;
+    border-radius: 12px;
+    overflow: hidden;
+    margin-bottom: 20px;
+}
+
+.buddyreels-single-video video {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.buddyreels-single-info {
+    background: white;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1);
+}
+
+.buddyreels-single-author {
+    display: flex;
+    align-items: center;
+    margin-bottom: 16px;
+    padding-bottom: 16px;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.buddyreels-single-author img {
+    border-radius: 50%;
+    margin-right: 12px;
+}
+
+.buddyreels-single-author-info h3 {
+    margin: 0;
+    font-size: 16px;
+    color: #333;
+}
+
+.buddyreels-single-author-info .date {
+    font-size: 12px;
+    color: #666;
+    margin-top: 2px;
+}
+
+.buddyreels-single-caption {
+    margin-bottom: 20px;
+    line-height: 1.5;
+    color: #333;
+}
+
+.buddyreels-single-actions {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    padding: 16px 0;
+    border-bottom: 1px solid #e0e0e0;
+    margin-bottom: 20px;
+}
+
+/* Notifications */
+.buddyreels-notification {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    padding: 16px 20px;
+    border-radius: 8px;
+    color: white;
+    font-weight: 600;
+    z-index: 9999;
+    transform: translateX(100%);
+    transition: transform 0.3s ease;
+    max-width: 300px;
+}
+
+.buddyreels-notification.show {
+    transform: translateX(0);
+}
+
+.buddyreels-notification-success {
+    background: #4caf50;
+}
+
+.buddyreels-notification-error {
+    background: #f44336;
+}
+
+.buddyreels-notification-info {
+    background: #2196f3;
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+    .buddyreels-feed {
+        padding: 10px 5px;
+    }
+    
+    .buddyreels-feed-item {
+        margin-bottom: 20px;
+        border-radius: 0;
+        box-shadow: none;
+        border-bottom: 1px solid #e0e0e0;
+    }
+    
+    .buddyreels-video-container {
+        height: 70vh;
+        border-radius: 0;
+    }
+    
+    .buddyreels-profile-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 12px;
+    }
+    
+    .buddyreels-single-container {
+        padding: 10px;
+    }
+    
+    .buddyreels-single-video {
+        border-radius: 0;
+        margin-bottom: 10px;
+    }
+    
+    .buddyreels-single-info {
+        border-radius: 0;
+        box-shadow: none;
+        border-top: 1px solid #e0e0e0;
+    }
+    
+    .buddyreels-upload-form {
+        border-radius: 0;
+        margin: 10px 0;
+    }
+}
+
+/* Touch-friendly buttons on mobile */
+@media (max-width: 768px) {
+    .buddyreels-like-btn,
+    .buddyreels-comment-btn,
+    .buddyreels-share-btn {
+        padding: 12px;
+        min-height: 44px;
+        min-width: 44px;
+    }
+    
+    .buddyreels-btn {
+        padding: 16px 24px;
+        min-height: 48px;
+    }
+}
+
+/* Dark mode support */
+@media (prefers-color-scheme: dark) {
+    .buddyreels-feed-item {
+        background: #1e1e1e;
+        color: #fff;
+    }
+    
+    .buddyreels-author-name {
+        color: #fff;
+    }
+    
+    .buddyreels-caption {
+        color: #ccc;
+    }
+    
+    .buddyreels-like-btn:hover,
+    .buddyreels-comment-btn:hover,
+    .buddyreels-share-btn:hover {
+        background: #333;
+        color: #fff;
+    }
+    
+    .buddyreels-upload-form {
+        background: #1e1e1e;
+        color: #fff;
+    }
+    
+    .buddyreels-single-info {
+        background: #1e1e1e;
+        color: #fff;
+    }
+}
+
+/* Accessibility */
+.buddyreels-video:focus {
+    outline: 2px solid #007cba;
+    outline-offset: 2px;
+}
+
+.buddyreels-btn:focus,
+.buddyreels-like-btn:focus,
+.buddyreels-comment-btn:focus,
+.buddyreels-share-btn:focus {
+    outline: 2px solid #007cba;
+    outline-offset: 2px;
+}
+
+/* Loading states */
+.buddyreels-loading {
+    opacity: 0.6;
+    pointer-events: none;
+}
+
+.buddyreels-loading::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 20px;
+    height: 20px;
+    margin: -10px 0 0 -10px;
+    border: 2px solid #007cba;
+    border-top: 2px solid transparent;
+    border-radius: 50%;
+    animation: buddyreels-spin 1s linear infinite;
+}
+
+@keyframes buddyreels-spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}

@@ -1,0 +1,6 @@
+<svg width="300" height="300" xmlns="http://www.w3.org/2000/svg">
+<rect width="300" height="300" fill="#f0f0f0"/>
+<circle cx="150" cy="150" r="50" fill="none" stroke="#ccc" stroke-width="4"/>
+<polygon points="130,130 130,170 170,150" fill="#ccc"/>
+<text x="150" y="200" text-anchor="middle" fill="#999" font-size="14">Video Reel</text>
+</svg>
