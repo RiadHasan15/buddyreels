@@ -165,47 +165,8 @@
 
     // Initialize reel feed functionality
     function initReelFeed() {
-        var $feed = $('.buddyreels-feed');
-        var loading = false;
-        var page = 2;
-        var hasMore = true;
-
-        // Infinite scroll
-        $(window).on('scroll', function() {
-            if (!loading && hasMore && $(window).scrollTop() + $(window).height() >= $(document).height() - 1000) {
-                loadMoreReels();
-            }
-        });
-
-        function loadMoreReels() {
-            if (loading || !hasMore) return;
-            
-            loading = true;
-            
-            $.ajax({
-                url: buddyreels_ajax.ajax_url,
-                type: 'POST',
-                data: {
-                    action: 'buddyreels_load_more_reels',
-                    page: page,
-                    count: 10,
-                    user_id: $feed.data('user-id') || 0
-                },
-                success: function(response) {
-                    if (response.success && response.data.html) {
-                        $feed.append(response.data.html);
-                        page++;
-                        hasMore = response.data.has_more;
-                        initVideoPlayer(); // Re-initialize for new videos
-                    } else {
-                        hasMore = false;
-                    }
-                },
-                complete: function() {
-                    loading = false;
-                }
-            });
-        }
+        // Vertical scroll feed is now handled in the template
+        // This function is kept for compatibility but doesn't need infinite scroll logic
     }
 
     // Initialize like system
@@ -261,21 +222,37 @@
             var $video = $(this);
             var video = this;
             
-            // Intersection Observer for autoplay
+            // Intersection Observer for autoplay with better threshold for vertical feed
             if ('IntersectionObserver' in window) {
                 var observer = new IntersectionObserver(function(entries) {
                     entries.forEach(function(entry) {
                         if (entry.isIntersecting) {
+                            // Pause currently playing video
                             if (currentlyPlaying && currentlyPlaying !== video) {
                                 currentlyPlaying.pause();
+                                $(currentlyPlaying).siblings('.buddyreels-video-overlay').show();
                             }
-                            video.play();
-                            currentlyPlaying = video;
+                            
+                            // Play current video
+                            video.play().then(function() {
+                                currentlyPlaying = video;
+                                $video.siblings('.buddyreels-video-overlay').hide();
+                            }).catch(function(error) {
+                                console.log('Video autoplay failed:', error);
+                            });
                         } else {
-                            video.pause();
+                            // Pause video when not visible
+                            if (video === currentlyPlaying) {
+                                video.pause();
+                                currentlyPlaying = null;
+                            }
+                            $video.siblings('.buddyreels-video-overlay').show();
                         }
                     });
-                }, { threshold: 0.5 });
+                }, { 
+                    threshold: 0.7,
+                    rootMargin: '0px 0px -10% 0px'
+                });
                 
                 observer.observe(video);
             }
@@ -285,11 +262,16 @@
                 if (video.paused) {
                     if (currentlyPlaying && currentlyPlaying !== video) {
                         currentlyPlaying.pause();
+                        $(currentlyPlaying).siblings('.buddyreels-video-overlay').show();
                     }
-                    video.play();
-                    currentlyPlaying = video;
+                    video.play().then(function() {
+                        currentlyPlaying = video;
+                        $video.siblings('.buddyreels-video-overlay').hide();
+                    });
                 } else {
                     video.pause();
+                    currentlyPlaying = null;
+                    $video.siblings('.buddyreels-video-overlay').show();
                 }
             });
             
