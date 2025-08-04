@@ -24,9 +24,7 @@ if (!function_exists('buddyreels_init')) {
             background: #000;
         }
         .test-container {
-            max-width: 400px;
-            margin: 0 auto;
-            height: 100vh;
+
             background: #000;
         }
         .test-header {
@@ -42,7 +40,7 @@ if (!function_exists('buddyreels_init')) {
         }
         .test-content {
             padding-top: 60px;
-            height: calc(100vh - 60px);
+
         }
     </style>
 </head>

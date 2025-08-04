@@ -2,17 +2,17 @@
 
 /* Feed Styles */
 .buddyreels-feed {
-    max-width: 400px;
+    max-width: 320px;
     margin: 0 auto;
     padding: 0;
-    height: 100vh;
+
     overflow-y: auto;
     scroll-snap-type: y mandatory;
     -webkit-overflow-scrolling: touch;
 }
 
 .buddyreels-feed-item {
-    height: 100vh;
+
     background: #000;
     overflow: hidden;
     position: relative;
@@ -477,7 +477,7 @@
     }
     
     .buddyreels-feed-item {
-        height: 100vh;
+
         border-radius: 0;
         box-shadow: none;
         border-bottom: none;
@@ -665,6 +665,6 @@
 /* Desktop styles */
 @media (min-width: 1025px) {
     .buddyreels-feed {
-        max-width: 400px;
+
     }
 }
