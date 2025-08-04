@@ -51,6 +51,10 @@ class BuddyReels_Feed {
 
         $reels_query = new WP_Query($args);
 
+        // Add data attributes for lazy loading
+        $atts['has_more'] = $reels_query->max_num_pages > 1;
+        $atts['total_pages'] = $reels_query->max_num_pages;
+
         include BUDDYREELS_PLUGIN_DIR . 'templates/reels-feed.php';
 
         wp_reset_postdata();
